@@ -154,6 +154,10 @@ else {
       mochaExports.describe(name, Meteor.bindEnvironment(func, function(err){throw err; }));
     };
 
+    globa.describe.only = function (name, func){
+      mochaExports.describe.only(name, Meteor.bindEnvironment(func, function(err){throw err; }));
+    };
+
     //In Meteor, these blocks will all be invoking Meteor code and must
     //run within a fiber. We must therefore wrap each with something like
     //bindEnvironment. The function passed off to mocha must have length
